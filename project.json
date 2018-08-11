@@ -1,0 +1,114 @@
+{
+  "name": "Space",
+  "assets": [
+    {
+      "id": "4",
+      "name": "Scene",
+      "type": null,
+      "children": [
+        {
+          "id": "0",
+          "name": "Scene",
+          "type": "scene"
+        }
+      ]
+    },
+    {
+      "id": "5",
+      "name": "Textures",
+      "type": null,
+      "children": [
+        {
+          "id": "20",
+          "name": "Decor",
+          "type": null,
+          "children": [
+            {
+              "id": "1",
+              "name": "SpaceTileSet",
+              "type": "tileSet"
+            },
+            {
+              "id": "3",
+              "name": "MainShip",
+              "type": "tileMap"
+            },
+            {
+              "id": "21",
+              "name": "Tile Set",
+              "type": "tileSet"
+            }
+          ]
+        },
+        {
+          "id": "16",
+          "name": "NewShip",
+          "type": "tileSet"
+        },
+        {
+          "id": "10",
+          "name": "Background",
+          "type": "sprite"
+        },
+        {
+          "id": "12",
+          "name": "Box",
+          "type": "sprite"
+        },
+        {
+          "id": "14",
+          "name": "SAS",
+          "type": "tileMap"
+        },
+        {
+          "id": "19",
+          "name": "Player",
+          "type": null,
+          "children": [
+            {
+              "id": "7",
+              "name": "Spaceman",
+              "type": "sprite"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "6",
+      "name": "Scripts",
+      "type": null,
+      "children": [
+        {
+          "id": "8",
+          "name": "Player",
+          "type": null,
+          "children": [
+            {
+              "id": "9",
+              "name": "PlayerMovement",
+              "type": "script"
+            }
+          ]
+        },
+        {
+          "id": "11",
+          "name": "SAS",
+          "type": null,
+          "children": [
+            {
+              "id": "13",
+              "name": "boxGenerator",
+              "type": "script"
+            },
+            {
+              "id": "22",
+              "name": "Script",
+              "type": "script"
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

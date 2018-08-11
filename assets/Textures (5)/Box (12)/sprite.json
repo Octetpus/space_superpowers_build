@@ -1,0 +1,86 @@
+{
+  "formatVersion": 3,
+  "maps": [
+    "map"
+  ],
+  "filtering": "pixelated",
+  "wrapping": "clampToEdge",
+  "pixelsPerUnit": 3,
+  "framesPerSecond": 10,
+  "opacity": null,
+  "alphaTest": 0.1,
+  "frameOrder": "rows",
+  "grid": {
+    "width": 140,
+    "height": 140
+  },
+  "origin": {
+    "x": 0,
+    "y": 0
+  },
+  "animations": [
+    {
+      "id": "0",
+      "name": "blue_length",
+      "startFrameIndex": 0,
+      "endFrameIndex": 0,
+      "speed": 1
+    },
+    {
+      "id": "1",
+      "name": "blue_width",
+      "startFrameIndex": 1,
+      "endFrameIndex": 1,
+      "speed": 1
+    },
+    {
+      "id": "2",
+      "name": "yellow_length",
+      "startFrameIndex": 2,
+      "endFrameIndex": 2,
+      "speed": 1
+    },
+    {
+      "id": "3",
+      "name": "yellow_width",
+      "startFrameIndex": 3,
+      "endFrameIndex": 3,
+      "speed": 1
+    },
+    {
+      "id": "4",
+      "name": "green_length",
+      "startFrameIndex": 4,
+      "endFrameIndex": 4,
+      "speed": 1
+    },
+    {
+      "id": "5",
+      "name": "green_width",
+      "startFrameIndex": 5,
+      "endFrameIndex": 5,
+      "speed": 1
+    },
+    {
+      "id": "6",
+      "name": "orange_length",
+      "startFrameIndex": 6,
+      "endFrameIndex": 6,
+      "speed": 1
+    },
+    {
+      "id": "7",
+      "name": "orange_width",
+      "startFrameIndex": 7,
+      "endFrameIndex": 7,
+      "speed": 1
+    }
+  ],
+  "mapSlots": {
+    "map": "map",
+    "light": null,
+    "specular": null,
+    "alpha": null,
+    "normal": null
+  }
+}

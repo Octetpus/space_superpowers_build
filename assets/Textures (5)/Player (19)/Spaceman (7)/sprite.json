@@ -1,0 +1,86 @@
+{
+  "formatVersion": 3,
+  "maps": [
+    "map"
+  ],
+  "filtering": "pixelated",
+  "wrapping": "clampToEdge",
+  "pixelsPerUnit": 1,
+  "framesPerSecond": 7,
+  "opacity": null,
+  "alphaTest": 0.1,
+  "frameOrder": "rows",
+  "grid": {
+    "width": 32,
+    "height": 32
+  },
+  "origin": {
+    "x": 0.5,
+    "y": 0.5
+  },
+  "animations": [
+    {
+      "id": "0",
+      "name": "walk_down",
+      "startFrameIndex": 0,
+      "endFrameIndex": 2,
+      "speed": 1
+    },
+    {
+      "id": "1",
+      "name": "walk_left",
+      "startFrameIndex": 3,
+      "endFrameIndex": 5,
+      "speed": 1
+    },
+    {
+      "id": "2",
+      "name": "walk_right",
+      "startFrameIndex": 6,
+      "endFrameIndex": 8,
+      "speed": 1
+    },
+    {
+      "id": "3",
+      "name": "walk_up",
+      "startFrameIndex": 9,
+      "endFrameIndex": 11,
+      "speed": 1
+    },
+    {
+      "id": "4",
+      "name": "idle_down",
+      "startFrameIndex": 1,
+      "endFrameIndex": 1,
+      "speed": 1
+    },
+    {
+      "id": "5",
+      "name": "idle_left",
+      "startFrameIndex": 4,
+      "endFrameIndex": 4,
+      "speed": 1
+    },
+    {
+      "id": "6",
+      "name": "idle_right",
+      "startFrameIndex": 7,
+      "endFrameIndex": 7,
+      "speed": 1
+    },
+    {
+      "id": "7",
+      "name": "idle_up",
+      "startFrameIndex": 10,
+      "endFrameIndex": 10,
+      "speed": 1
+    }
+  ],
+  "mapSlots": {
+    "map": "map",
+    "light": null,
+    "specular": null,
+    "alpha": null,
+    "normal": null
+  }
+}
