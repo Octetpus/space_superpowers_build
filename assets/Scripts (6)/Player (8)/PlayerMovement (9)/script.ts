@@ -2,16 +2,26 @@ class PlayerMovement extends Sup.Behavior {
   
   speed = 2
   lastKey = "down";
-  boxesBodies: Sup.ArcadePhysics2D.Body[] = [];
+  whiteList: Sup.ArcadePhysics2D.Body[] = [];
   
   start() {
     let boxes = Sup.getActor("SAS").getChildren();
-    for(let b of boxes) this.boxesBodies.push(b.arcadeBody2D);
-    this.boxesBodies.push(Sup.getActor("Map").arcadeBody2D)
+    let walls = Sup.getActor("Map").getChildren();
+    for(let b of boxes) this.whiteList.push(b.arcadeBody2D);
+    for(let w of walls) this.whiteList.push(w.arcadeBody2D);
+    this.whiteList.push(Sup.getActor("Map").arcadeBody2D)
   }
   update() {
+    this.whiteList= [];
+    let boxes = Sup.getActor("SAS").getChildren();
+    let walls = Sup.getActor("Map").getChildren();
+    for(let b of boxes) this.whiteList.push(b.arcadeBody2D);
+    for(let w of walls) this.whiteList.push(w.arcadeBody2D);
+    this.whiteList.push(Sup.getActor("Map").arcadeBody2D)
+    
     let x = 0, y = 0;
     let key = this.lastKey;
+    
     //Map key to moves
     if(Sup.Input.isKeyDown("Z") || Sup.Input.isKeyDown("W")) {
       y = this.speed;
@@ -55,7 +65,7 @@ class PlayerMovement extends Sup.Behavior {
   moveActor(x, y) {
     //Make the player collides to Map layer 0
     //Sup.ArcadePhysics2D.collides(this.actor.arcadeBody2D, Sup.getActor("Map").arcadeBody2D);
-    Sup.ArcadePhysics2D.collides(this.actor.arcadeBody2D, this.boxesBodies);
+    Sup.ArcadePhysics2D.collides(this.actor.arcadeBody2D, this.whiteList);
     this.actor.arcadeBody2D.setVelocity(new Sup.Math.Vector2(x, y));
   }
 }

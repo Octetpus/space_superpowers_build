@@ -25,7 +25,7 @@
           "children": [
             {
               "id": "1",
-              "name": "SpaceTileSet",
+              "name": "SpaceTileSet_modified",
               "type": "tileSet"
             },
             {
@@ -35,8 +35,18 @@
             },
             {
               "id": "21",
-              "name": "Tile Set",
+              "name": "SpaceTileSet_base",
               "type": "tileSet"
+            },
+            {
+              "id": "14",
+              "name": "SAS",
+              "type": "tileMap"
+            },
+            {
+              "id": "24",
+              "name": "invisibleWall",
+              "type": "sprite"
             }
           ]
         },
@@ -54,11 +64,6 @@
           "id": "12",
           "name": "Box",
           "type": "sprite"
-        },
-        {
-          "id": "14",
-          "name": "SAS",
-          "type": "tileMap"
         },
         {
           "id": "19",
@@ -97,18 +102,35 @@
           "type": null,
           "children": [
             {
+              "id": "26",
+              "name": "boxMovement",
+              "type": "script"
+            },
+            {
               "id": "13",
               "name": "boxCreation",
               "type": "script"
             },
             {
-              "id": "22",
-              "name": "boxMovement",
+              "id": "23",
+              "name": "boxGeneration",
               "type": "script"
             },
             {
-              "id": "23",
-              "name": "boxGeneration",
+              "id": "30",
+              "name": "boxTools",
+              "type": "script"
+            }
+          ]
+        },
+        {
+          "id": "28",
+          "name": "Machine",
+          "type": null,
+          "children": [
+            {
+              "id": "29",
+              "name": "Oxygen",
               "type": "script"
             }
           ]

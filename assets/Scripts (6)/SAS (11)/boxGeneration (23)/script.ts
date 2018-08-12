@@ -1,6 +1,5 @@
 class BoxGenerationBehavior extends Sup.Behavior {
   awake() {
-    
   }
 
   update() {
