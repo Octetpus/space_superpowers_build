@@ -98,12 +98,17 @@
           "children": [
             {
               "id": "13",
-              "name": "boxGenerator",
+              "name": "boxCreation",
               "type": "script"
             },
             {
               "id": "22",
-              "name": "Script",
+              "name": "boxMovement",
+              "type": "script"
+            },
+            {
+              "id": "23",
+              "name": "boxGeneration",
               "type": "script"
             }
           ]

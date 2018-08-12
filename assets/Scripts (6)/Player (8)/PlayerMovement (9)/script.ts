@@ -1,15 +1,13 @@
 class PlayerMovement extends Sup.Behavior {
   
-  public speed = 2
-  public lastKey = "down";
+  speed = 2
+  lastKey = "down";
   boxesBodies: Sup.ArcadePhysics2D.Body[] = [];
   
   start() {
-    Sup.log(Sup.ArcadePhysics2D.getAllBodies());
-    
     let boxes = Sup.getActor("SAS").getChildren();
     for(let b of boxes) this.boxesBodies.push(b.arcadeBody2D);
-    
+    this.boxesBodies.push(Sup.getActor("Map").arcadeBody2D)
   }
   update() {
     let x = 0, y = 0;
@@ -57,7 +55,7 @@ class PlayerMovement extends Sup.Behavior {
   moveActor(x, y) {
     //Make the player collides to Map layer 0
     //Sup.ArcadePhysics2D.collides(this.actor.arcadeBody2D, Sup.getActor("Map").arcadeBody2D);
-    Sup.ArcadePhysics2D.collides(this.actor.arcadeBody2D, Sup.ArcadePhysics2D.getAllBodies());
+    Sup.ArcadePhysics2D.collides(this.actor.arcadeBody2D, this.boxesBodies);
     this.actor.arcadeBody2D.setVelocity(new Sup.Math.Vector2(x, y));
   }
 }

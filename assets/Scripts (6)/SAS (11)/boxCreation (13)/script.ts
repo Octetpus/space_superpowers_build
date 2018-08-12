@@ -1,40 +1,43 @@
-class boxGenerator extends Sup.Behavior {
-  box = [];
-  boxRend = [];
-  boxHitbox = [];
-  
-  boardCase = new Array();
-  BOX_TYPE = new Array(["blue_length", "yellow_length", "green_length", "orange_length"], ["blue_width", "yellow_width", "green_width", "orange_width"]);
+class boxCreation extends Sup.Behavior {
+  private BOX_TYPE = new Array(["blue_length", "yellow_length", "green_length", "orange_length"], ["blue_width", "yellow_width", "green_width", "orange_width"]);
   BOX_SIZE = new Sup.Math.Vector2(140, 140);
   
-  position = new Sup.Math.Vector2(this.actor.getX(), this.actor.getY());
+  sasGrid = new Array();
+  box: Sup.Actor[] = [];
+  boxRend: Sup.SpriteRenderer[] = [];
+  boxHitbox: Sup.ArcadePhysics2D.Body[] = [];
+
+  //seed = String(Math.floor(Math.random() * 999999999) + 1);
+  seed = String(799578460);
+  rng = new RNG(this.seed);
   
   awake() {
-    //Associate a number to a case and its coordinates in unite
+    //Array of coordinates associated to case
+    Sup.log(this.seed);
     let board_Size = this.getBoardSize();
-    Sup.log(this.BOX_TYPE);
     for (let i = 0; i <= board_Size.x; i++) {
       for(let j = 0; j <= board_Size.y; j++) {
-        this.boardCase.push([i, j]);
+        this.sasGrid.push([i, j]);
       }
     }
     
     //Init
     for(let i = 0; i < 18; i++) {
-      let box_position = new Array();
-      let box_rand_type = Math.floor(Math.random() * 2) + 0;
-      let box_rand_color = Math.floor(Math.random() * 4) + 0;
+      let box_rand_type = this.rng.random(0, 2);
+      let box_rand_color = this.rng.random(0, 4);
       let boxTemp = new Sup.Actor("Box" + i);
       let boxTempRend = new Sup.SpriteRenderer(boxTemp, "Textures/Box");
       
-      //Define hitboxe
+      
       this.createHitbox(box_rand_type, boxTemp);
+      
       this.box.push((boxTemp));
       this.boxRend.push((boxTempRend));
       
       this.box[i].arcadeBody2D.warpPosition(this.coordCalculation(i));
-      Sup.log(this.box[i].getPosition().z)
-      this.box[i].setParent("SAS");
+      
+      this.box[i].setParent(Sup.getActor("SAS"));
+      
       this.boxRend[i].setAnimation(this.BOX_TYPE[box_rand_type][box_rand_color]);
       //Sup.log(this.coordCalculation(i));
       //Sup.log("boxtype " + this.BOX_TYPE);
@@ -46,9 +49,10 @@ class boxGenerator extends Sup.Behavior {
   
   //Calculate coordinates in pixel with the number associated to the case
   coordCalculation(num) {
+    let position = new Sup.Math.Vector2(this.actor.getX(), this.actor.getY());
     let coords_x, coords_y;
-    coords_x = this.position.x + 140/3 * this.boardCase[num][1];
-    coords_y = this.position.y + 140/3 * this.boardCase[num][0];
+    coords_x = position.x + 140/3 * this.sasGrid[num][1];
+    coords_y = position.y + 140/3 * this.sasGrid[num][0];
     let coords = new Sup.Math.Vector3(coords_x, coords_y, 4);
     return coords;
   }
@@ -89,7 +93,7 @@ class boxGenerator extends Sup.Behavior {
   }
   
 }
-Sup.registerBehavior(boxGenerator);
+Sup.registerBehavior(boxCreation);
 
 /* | || 
   || |_ */
