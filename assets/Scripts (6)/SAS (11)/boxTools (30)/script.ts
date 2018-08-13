@@ -50,12 +50,16 @@ namespace boxTools {
   export function boxGenOrder() {
     let rng = new RNG(Sup.Storage.getJSON("seed"));
     let order = [];
-    for(let i = 0; i < 20; i++) {
-      let temp = rng.random(0, 20);
+    for(let i = 0; i < 30; i++) {
+      let temp = rng.random(0, 30);
       if(order.indexOf(temp) == -1) {
          order.push(temp);
         }
+      else {
+        i--;
       }
+      }
+      Sup.log(order);
       return order;
     }
 }

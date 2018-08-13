@@ -11,7 +11,7 @@ class boxCreation extends Sup.Behavior {
   //seed = String(799578460);
   rng = new RNG(this.seed);
   
-  num = 20;
+  num = 10;
   
   start() {
     

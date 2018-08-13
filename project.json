@@ -132,8 +132,28 @@
               "id": "29",
               "name": "Oxygen",
               "type": "script"
+            },
+            {
+              "id": "32",
+              "name": "Reactor",
+              "type": "script"
+            },
+            {
+              "id": "34",
+              "name": "MachineYellow",
+              "type": "script"
+            },
+            {
+              "id": "35",
+              "name": "MachineGreen",
+              "type": "script"
             }
           ]
+        },
+        {
+          "id": "31",
+          "name": "Font",
+          "type": "font"
         }
       ]
     }

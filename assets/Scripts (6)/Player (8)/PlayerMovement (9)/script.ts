@@ -7,8 +7,10 @@ class PlayerMovement extends Sup.Behavior {
   start() {
     let boxes = Sup.getActor("SAS").getChildren();
     let walls = Sup.getActor("Map").getChildren();
+    let machine = Sup.getActor("Machine").getChildren();
     for(let b of boxes) this.whiteList.push(b.arcadeBody2D);
     for(let w of walls) this.whiteList.push(w.arcadeBody2D);
+    for(let m of machine) this.whiteList.push(m.arcadeBody2D);
     this.whiteList.push(Sup.getActor("Map").arcadeBody2D)
   }
   update() {

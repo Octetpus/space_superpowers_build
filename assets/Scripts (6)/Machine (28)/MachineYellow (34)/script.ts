@@ -1,9 +1,9 @@
-class OxygenBehavior extends Sup.Behavior {
+class MachineYellowBehavior extends Sup.Behavior {
   boxEntity: Sup.ArcadePhysics2D.Body[] = [];
   progress = 0;
-  textActor = "OxygenProgress";
-  text = "Oxygen : ";
-  colorBox = "blue"
+  textActor = "MotorProgress";
+  text = "Motor : ";
+  colorBox = "yellow"
   start() {
     let boxes = Sup.getActor("EntityBox").getChildren();
     for(let b of boxes) this.boxEntity.push(b.arcadeBody2D);
@@ -33,4 +33,4 @@ class OxygenBehavior extends Sup.Behavior {
       Sup.getActor(this.textActor).textRenderer.setText(this.text + this.progress)
     }
 }
-Sup.registerBehavior(OxygenBehavior);
+Sup.registerBehavior(MachineYellowBehavior);
